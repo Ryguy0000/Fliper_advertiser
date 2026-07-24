@@ -18,11 +18,11 @@ jobs:
       - name: Build with uFBT
         uses: flipperdevices/flipperzero-ufbt-action@v0.1.2
         with:
-          app_dir: custom_ble_adv   # <-- Set this to your subfolder name!
+          app-dir: custom-ble-adv   # <-- Use hyphen (-) instead of underscore (_)
         id: build-app
 
       - name: Upload .fap Artifact
         uses: actions/upload-artifact@v4
         with:
           name: flipper-fap
-          path: '*/*.fap'
+          path: '**/*.fap'          # Search subdirectories for the compiled file
