@@ -1,5 +1,5 @@
 App(
-    appid="custom_ble_adv",
+    appid="custom-ble-adv",
     name="BLE Custom Adv",
     apptype=AppType.EXTERNAL,
     entry_point="custom_ble_adv_app",
