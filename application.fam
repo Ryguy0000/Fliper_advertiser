@@ -1,13 +1,12 @@
 App(
-    appid="fliptok_live_chat",
-    name="FlipTok Live",
-    apptype=FlipperAppType.EXTERNAL,
-    entry_point="fliptok_live_chat_app",
-    requires=["bt", "gui"],
+    appid="custom_ble_adv",
+    name="BLE Custom Adv",
+    apptype=AppType.EXTERNAL,
+    entry_point="custom_ble_adv_app",
+    cdefines=["APP_CUSTOM_BLE_ADV"],
+    requires=["gui", "bt"],
     stack_size=2 * 1024,
-    fap_description="Display FlipTok Live chat on Flipper Zero",
+    order=10,
     fap_category="Bluetooth",
-    fap_icon="icon.png",
-    fap_version="1.0.0",
-    fap_author="Dr.Mosfet",
+    fap_icon="icon.png",  # Requires a 10x10 PNG icon or omit this line
 )
