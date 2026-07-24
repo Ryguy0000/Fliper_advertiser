@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,10 +17,12 @@ jobs:
 
       - name: Build with uFBT
         uses: flipperdevices/flipperzero-ufbt-action@v0.1.2
+        with:
+          app_dir: custom_ble_adv   # <-- Set this to your subfolder name!
         id: build-app
 
       - name: Upload .fap Artifact
         uses: actions/upload-artifact@v4
         with:
           name: flipper-fap
-          path: '*.fap'
+          path: '*/*.fap'
